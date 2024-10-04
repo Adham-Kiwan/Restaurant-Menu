@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Restaurant Menu</h1>
+    <div id="menu-container">
+      <h2>Drinks</h2>
+      <div id="drinks-menu" class="menu-category"></div>
+
+      <h2>Sandwiches</h2>
+      <div id="sandwiches-menu" class="menu-category"></div>
+    </div>
+
+    <!-- Add Item Button -->
+    <button id="add-item-btn" class="add-btn">+</button>
+
+    <!-- Add Item Modal -->
+    <div id="add-item-modal" class="modal">
+      <div class="modal-content">
+        <h3>Add New Item</h3>
+        <form id="add-item-form">
+          <label for="category">Category:</label>
+          <select id="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="drinks">Drinks</option>
+            <option value="sandwiches">Sandwiches</option>
+          </select>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+
+          <label for="price">Price:</label>
+          <input type="number" id="price" step="0.01" required />
+
+          <label for="description">Description:</label>
+          <textarea id="description" required></textarea>
+
+          <!-- Modified: Add image button to open file picker -->
+          <label for="photo" class="custom-file-label">Choose an Image</label>
+          <input type="file" id="photo" accept="image/*" required hidden />
+          <p id="file-name" style="font-style: italic"></p>
+
+          <button type="submit">Add Item</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
