@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="flex">
-      <h1>Restaurant Menu</h1>
+    <div class="flex flex-col items-center">
+      <h1 class="text-center mb-5 text-2xl">Restaurant Menu</h1>
       <div id="menu-container">
         <h2>Drinks</h2>
-        <div id="drinks-menu" class="menu-category"></div>
+        <div id="drinks-menu" class="flex flex-wrap gap-5 justify-center"></div>
 
         <h2>Sandwiches</h2>
-        <div id="sandwiches-menu" class="menu-category"></div>
+        <div id="sandwiches-menu" class="flex flex-wrap gap-5 justify-center"></div>
       </div>
 
-      <h2>Your Cart</h2>
+      <h1 class="text-center mt-8 mb-5 text-2xl">Your Orders</h1>
       <div id="cart-container"></div>
-      <p id="cart-total"></p>
+      <p id="cart-total" class="mt-5 font-bold text-right text-2xl"></p>
     </div>
     <!-- Add Item Button -->
-    <button id="add-item-btn" class="add-btn">+</button>
+    <button id="add-item-btn" class="fixed cursor-pointer text-white text-3xl border-0 rounded-full w-16 h-16 add-btn">+</button>
 
     <!-- Add Item Modal -->
-    <div id="add-item-modal" class="modal">
-      <div class="modal-content">
+    <div id="add-item-modal" class="modal hidden fixed w-full h-full  justify-center items-center">
+      <div class="modal-content bg-white p-8 rounded-3xl w-85">
         <h3>Add New Item</h3>
         <form id="add-item-form">
           <!-- Modified: Added radio buttons for existing and new category -->
@@ -84,5 +84,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </body>
 </html>

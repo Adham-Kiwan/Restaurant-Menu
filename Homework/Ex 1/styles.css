@@ -1,14 +1,11 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #838383;
 }
-.flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 /* Custom file input button */
 .custom-file-label {
     display: inline-block;
@@ -35,8 +32,6 @@ body {
 
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
     color: #343a40;
 }
 
@@ -56,6 +51,10 @@ h1 {
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 
@@ -79,17 +78,9 @@ strong {
 }
 
 .add-btn {
-    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #28a745;
-    color: white;
-    font-size: 32px;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
 }
@@ -99,22 +90,13 @@ strong {
 }
 
 .modal {
-    display: none;
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+
 }
 
 .modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    width: 350px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s;
 }
@@ -270,9 +252,5 @@ button[type="button"]:hover {
 
 /* Cart Total Styling */
 #cart-total {
-    font-size: 1.5em;
-    font-weight: bold;
     color: #333;
-    margin-top: 20px;
-    text-align: right;
 }
