@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Restaurant Menu</h1>
-    <div id="menu-container">
-      <h2>Drinks</h2>
-      <div id="drinks-menu" class="menu-category"></div>
+    <div class="flex">
+      <h1>Restaurant Menu</h1>
+      <div id="menu-container">
+        <h2>Drinks</h2>
+        <div id="drinks-menu" class="menu-category"></div>
 
-      <h2>Sandwiches</h2>
-      <div id="sandwiches-menu" class="menu-category"></div>
+        <h2>Sandwiches</h2>
+        <div id="sandwiches-menu" class="menu-category"></div>
+      </div>
+
+      <h2>Your Cart</h2>
+      <div id="cart-container"></div>
+      <p id="cart-total"></p>
     </div>
-
     <!-- Add Item Button -->
     <button id="add-item-btn" class="add-btn">+</button>
 
@@ -24,12 +29,40 @@
       <div class="modal-content">
         <h3>Add New Item</h3>
         <form id="add-item-form">
-          <label for="category">Category:</label>
-          <select id="category" required>
-            <option value="" disabled selected>Select Category</option>
-            <option value="drinks">Drinks</option>
-            <option value="sandwiches">Sandwiches</option>
-          </select>
+          <!-- Modified: Added radio buttons for existing and new category -->
+          <label>Category:</label>
+          <div>
+            <input
+              type="radio"
+              id="existing-category"
+              name="category-type"
+              value="existing"
+              checked
+            />
+            <label for="existing-category">Existing Category</label>
+            <select id="category" required>
+              <option value="" disabled selected>Select Category</option>
+              <option value="drinks">Drinks</option>
+              <option value="sandwiches">Sandwiches</option>
+            </select>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              id="new-category"
+              name="category-type"
+              value="new"
+            />
+            <label for="new-category">New Category</label>
+            <input
+              type="text"
+              id="new-category-name"
+              placeholder="Enter new category"
+              disabled
+              required
+            />
+          </div>
 
           <label for="name">Name:</label>
           <input type="text" id="name" required />
@@ -40,7 +73,6 @@
           <label for="description">Description:</label>
           <textarea id="description" required></textarea>
 
-          <!-- Modified: Add image button to open file picker -->
           <label for="photo" class="custom-file-label">Choose an Image</label>
           <input type="file" id="photo" accept="image/*" required hidden />
           <p id="file-name" style="font-style: italic"></p>
